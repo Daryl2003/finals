@@ -30,6 +30,7 @@
     /* Basic styling for the notifications page */
     .container {
         max-width: 800px;
+        
     }
 
     .notifications-list {

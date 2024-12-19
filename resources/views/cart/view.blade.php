@@ -69,8 +69,8 @@
     }
     .card:hover {
         transform: translateY(-5px);
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-        background-color: #a4a4a0;
+        box-shadow: 0px 5px 15px rgba(59, 58, 58, 0.1);
+        background-color:rgb(250, 248, 248);
     }
     .card-title {
         font-size: 1.25rem;
@@ -82,7 +82,7 @@
         font-size: 1.1rem;
     }
     .btn-success {
-        background-color: rgb(66, 107, 31);
+        background-color: rgb(150, 88, 88);
         border-color: #ffffff;
         transition: background-color 0.3s ease;
     }

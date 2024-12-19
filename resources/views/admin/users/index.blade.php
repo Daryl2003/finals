@@ -3,9 +3,12 @@
 @section('content')
 
 <div class="container-fluid">
-    <div class="card mb-4">
-        <div class="card-header bg-success text-white d-flex justify-content-center align-items-center">
-            <h1 class="mb-0"><i class="fas fa-users mr-2"></i> Manage Users</h1> <!-- 'mr-2' adds a margin between icon and text -->
+    <div class="card mb-4 shadow-sm">
+        <div style="background: linear-gradient(90deg, rgb(204, 147, 147) 0%, rgb(141, 37, 37) 100%);" class="card-header text-white d-flex justify-content-between align-items-center">
+            <h2 class="mb-0"><i class="fas fa-users"></i> Manage Users</h2>
+            <a style="background: grey" href="{{ route('admin.users.create') }}" class="btn btn-primary btn-sm">
+                <i class="fas fa-plus"></i> Add User
+            </a>
         </div>
 
         <div class="card-body">
@@ -19,12 +22,12 @@
             @endif
 
             <div class="table-responsive">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-striped">
                     <thead class="thead-dark">
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Role</th>
+                            <th>Role(s)</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -51,12 +54,6 @@
                     </tbody>
                 </table>
             </div>
-
-            <!-- Add New User button inside the Actions column -->
-            <a href="{{ route('admin.users.create') }}" class="btn btn-primary mt-3">
-                <i class="fas fa-plus"></i> Add New User
-            </a>
-
         </div>
     </div>
 </div>

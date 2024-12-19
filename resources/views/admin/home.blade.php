@@ -2,12 +2,15 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="card mb-4">
-        <div class="card-header bg-success text-white d-flex justify-content-center align-items-center">
-            <h1 class="mb-0"><i class="fas fa-cogs mr-2"></i> Manage Products</h1> <!-- 'mr-2' adds a margin between icon and text -->
+    <div class="card mb-4 shadow-sm">
+        <div style="background: linear-gradient(90deg, rgb(206, 151, 151) 0%, rgb(158, 75, 75) 100%);" class="card-header text-white d-flex justify-content-between align-items-center">
+            <h2 class="mb-0"><i class="fas fa-cogs"></i> Manage Products</h2>
+            <a style="background: grey; "href="{{ route('products.create') }}" class="btn btn-primary btn-sm">
+                <i class="fas fa-plus"></i> Add Product
+            </a>
         </div>
 
-        <div class="card-body">         
+        <div class="card-body">
             @if(session('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ session('success') }}
@@ -18,7 +21,7 @@
             @endif
 
             <div class="table-responsive">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-striped">
                     <thead class="thead-dark">
                         <tr>
                             <th>Product Name</th>
@@ -33,7 +36,7 @@
                                 <td>{{ $product->product_name }}</td>
                                 <td>
                                     @if($product->discount)
-                                        <span style="text-decoration: line-through;">₱{{ number_format($product->price, 2) }}</span>
+                                        <span class="text-decoration-line-through text-muted">₱{{ number_format($product->price, 2) }}</span>
                                         ₱{{ number_format($product->price - ($product->price * ($product->discount / 100)), 2) }}
                                     @else
                                         ₱{{ number_format($product->price, 2) }}
@@ -66,10 +69,6 @@
                         @endforelse
                     </tbody>
                 </table>
-
-                <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">
-                    <i class="fas fa-plus"></i> Add New Product
-                </a>
             </div>
         </div>
     </div>

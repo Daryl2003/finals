@@ -123,19 +123,19 @@
         font-weight: bold;
     }
     .payment-header {
-        background-color: rgb(66, 107, 31);
+        background-color: rgb(153, 85, 85);
         color: #fff;
     }
     .cart-header {
-        background-color: rgb(66, 107, 31);
+        background-color: rgb(155, 85, 85);
         color: #fff;
     }
     .btn-lg {
         font-size: 1.25rem;
     }
     .btn-success {
-        background-color: rgb(66, 107, 31);
-        border-color: #28a745;
+        background-color: rgb(161, 90, 90);
+        border-color:rgb(255, 255, 255);
         transition: background-color 0.3s ease, transform 0.2s ease;
     }
     .btn-success:hover {

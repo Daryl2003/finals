@@ -1,9 +1,10 @@
 @extends('admin.layouts.app')
 
 @section('content')
-<div class="container-fluid">
+<div  class="container-fluid">
     <div class="card mb-4">
-        <div class="card-header bg-success text-white d-flex justify-content-center align-items-center">
+        <div style="background:rgb(167, 87, 87);" class="card-header
+         text-white d-flex justify-content-center align-items-center">
             <h1 class="mb-0"><i class="fas fa-box-open mr-2"></i> Manage Orders</h1> <!-- 'mr-2' adds a margin between icon and text -->
         </div>
 

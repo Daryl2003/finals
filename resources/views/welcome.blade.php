@@ -1,238 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ThriftShop</title>
-    <!-- Importing the required fonts -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-    />
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> <!-- Include your CSS -->
     <style>
-      :root {
-  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
-    "Source Han Sans CN", sans-serif;
+        /* Root Variables for Styling */
+        :root {
+            --primary-color: rgb(250, 250, 250);
+            --accent-color: rgb(187, 5, 5);
+            --text-color-light: #fff;
+            --font-family: 'Poppins', Arial, sans-serif;
+            --border-radius: 12px;
+            --shadow-md: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Reset Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--text-color-light);
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Full-Screen Centering */
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full screen height */
+            text-align: center;
+            padding: 20px;
+        }
+
+        .box {
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .box h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .box p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .box a {
+            text-decoration: none;
+            background: var(--accent-color);
+            color: var(--text-color-light);
+            padding: 0.75rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box a:hover {
+          background: linear-gradient(135deg,rgb(0, 0, 0),rgb(128, 10, 6));
+            transform: scale(1.05);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .box h1 {
+                font-size: 2rem;
             }
 
-            .main-container {
-              overflow: hidden;
+            .box p {
+                font-size: 1rem;
             }
 
-            .main-container,
-            .main-container * {
-              box-sizing: border-box;
+            .box a {
+                font-size: 1rem;
+                padding: 0.6rem 1.5rem;
             }
-
-            input,
-            select,
-            textarea,
-            button {
-              outline: 0;
-            }
-
-            .main-container {
-              position: relative;
-              width: 1440px;
-              height: 2092px;
-              margin: 0 auto;
-              background: #ffffff;
-              overflow: hidden;
-            }
-            .rectangle {
-              position: relative;
-              width: 1440px;
-              height: 112px;
-              margin: 5px 0 0 30px;
-              z-index: 9;
-            }
-            .cart-button {
-              position: absolute;
-              width: 144px;
-              height: 59px;
-              top: 21px;
-              right: 96px;
-              cursor: pointer;
-              background: #426b1f;
-              border: none;
-              z-index: 7;
-              overflow: hidden;
-              border-radius: 8px;
-            }
-            .cart {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              position: absolute;
-              width: 34px;
-              height: 21px;
-              top: calc(50% - 10px);
-              left: calc(50% - 17px);
-              color: #ffffff;
-              font-family: Inter, var(--default-font-family);
-              font-size: 16px;
-              font-weight: 600;
-              line-height: 20.8px;
-              text-align: center;
-              white-space: nowrap;
-              z-index: 8;
-            }
-            .thrift-shop {
-              display: flex;
-              align-items: flex-start;
-              justify-content: flex-start;
-              position: absolute;
-              height: 32px;
-              top: 36px;
-              left: 66px;
-              color: #426b1f;
-              font-family: Newsreader, var(--default-font-family);
-              font-size: 32px;
-              font-weight: 500;
-              line-height: 32px;
-              text-align: left;
-              white-space: nowrap;
-              letter-spacing: -0.32px;
-              z-index: 3;
-            }
-            .products {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              position: absolute;
-              width: 90px;
-              height: 39px;
-              top: 36px;
-              right: 461px;
-              color: #000000;
-              font-family: Inter, var(--default-font-family);
-              font-size: 16px;
-              font-weight: 400;
-              line-height: 20.8px;
-              text-align: center;
-              z-index: 4;
-            }
-            .register {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              position: absolute;
-              width: 90px;
-              height: 39px;
-              top: 37px;
-              right: 262px;
-              color: #000000;
-              font-family: Inter, var(--default-font-family);
-              font-size: 16px;
-              font-weight: 400;
-              line-height: 20.8px;
-              text-align: center;
-              z-index: 5;
-            }
-            .login {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              position: absolute;
-              width: 90px;
-              height: 34px;
-              top: 39px;
-              right: 361px;
-              color: #000000;
-              font-family: Inter, var(--default-font-family);
-              font-size: 16px;
-              font-weight: 400;
-              line-height: 20.8px;
-              text-align: center;
-              z-index: 6;
-            }
-            .welcome-to-thrifts {
-              display: flex;
-              align-items: flex-start;
-              justify-content: center;
-              position: relative;
-              width: 1020px;
-              height: 90px;
-              margin: 83px 0 0 217px;
-              color: #000000;
-              font-family: Newsreader, var(--default-font-family);
-              font-size: 64px;
-              font-weight: 400;
-              line-height: 76.8px;
-              text-align: center;
-              letter-spacing: -1.28px;
-            }
-            .browse-button {
-              position: relative;
-              width: 227px;
-              height: 54px;
-              margin: 0 0 0 613px;
-              cursor: pointer;
-              background: hsl(92, 55%, 27%);
-              border: none;
-              z-index: 1;
-              overflow: hidden;
-              border-radius: 8px;
-            }
-            .browse-shop {
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-              position: absolute;
-              height: 26px;
-              top: calc(50% - 13px);
-              left: calc(50% - 81.5px);
-              color: white;
-              font-family: Inter, var(--default-font-family);
-              font-size: 20px;
-              font-weight: 600;
-              line-height: 26px;
-              text-align: left;
-              white-space: nowrap;
-              z-index: 2;
-            }
-            .frame {
-              position: relative;
-              width: 100px;
-              height: 100px;
-              margin: 608px 0 0 442px;
-              z-index: 10;
-              overflow: hidden;
-            }
-     
+        }
     </style>
-  </head>
-  <body>
-    <div class="main-container">
-      <!-- Header with the navigation menu -->
-      <div class="rectangle">
-        <button class="cart-button">
-          <span class="cart">Cart</span>
-        </button>
-        <span class="thrift-shop">ThriftApparel</span>
-        <a href="/products" class="products">Products</a>
-        <a href="/register" class="register">Register</a>
-        <a href="/login" class="login">Login</a>
-      </div>
-      
-      <!-- Main welcome section -->
-      <span class="welcome-to-thrifts">Welcome To The Thrifts!</span>
-      <button class="browse-button" onclick="window.location.href='/login';">
-    <span class="browse-shop">Browse our shop</span>
-    </button>
-
-      
-      <!-- Additional placeholder section -->
-      <div class="frame"></div>
+</head>
+<body>
+    <!-- Full-Screen Hero Section -->
+    <div class="content">
+        <div class="box">
+            <h1>Welcome to Alloy SwingArm!</h1>
+            <p>Login or Register now to start your shopping.</p>
+            <a href="{{ route('login') }}">Get Started</a>
+        </div>
     </div>
-    <!-- Scripts if needed -->
-  
-  </body>
+</body>
 </html>

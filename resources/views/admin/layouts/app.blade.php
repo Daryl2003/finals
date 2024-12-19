@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fc;
+            background: linear-gradient(135deg,rgb(250, 250, 250),rgb(128, 10, 6));
             font-family: Arial, sans-serif;
         }
 
@@ -18,7 +18,7 @@
             top: 0;
             left: 0;
             height: 100vh;
-            background-color: #426b1f;
+            background: linear-gradient(135deg,rgb(29, 29, 29),rgb(252, 18, 10));
             padding-top: 20px;
             transition: width 0.3s;
             border-radius: 3px;
@@ -26,7 +26,7 @@
         }
 
         .sidebar a {
-            color: #adb5bd;
+            color:rgb(255, 255, 255);
             padding: 15px;
             text-decoration: none;
             font-size: 18px;
@@ -36,12 +36,12 @@
 
         .sidebar a:hover {
             color: #f8f9fa;
-            background-color: #025b30;
+            background-color:rgb(116, 116, 116);
         }
 
         .sidebar a.active {
             color: #f8f9fa;
-            background-color: #025b30;
+            background-color:rgb(114, 114, 114);
             font-weight: bold;
         }
 

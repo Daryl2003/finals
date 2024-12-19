@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Thrift Store')</title>
+    <title>@yield('title', 'Alloy SwingArm Store')</title>
 
     <!-- External Bootstrap 4 CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,12 @@
             </li>
         </ul>
     </div>
-    
+    <style>
+        body {
+        background: linear-gradient(135deg, rgb(250, 250, 250), rgb(128, 10, 6));
+        height: 100vh;
+        }
+    </style>
     <main class="py-4">
         <!-- Page content -->
         @yield('content')
